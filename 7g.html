@@ -1,0 +1,43 @@
+<html>
+<body>
+
+<h2>User Defined Object in Javascript</h2>
+<pre id="output"></pre>
+
+<script>
+       class Student {
+              constructor(name, age, grade) {
+                  this._name = name;
+                  this._age = age;
+                  this._grade = grade;
+              }
+
+              // Getter
+              get name() {
+                  return this._name;
+              }
+
+              // Setter
+              set name(newname) {
+                  if (newname.length > 0) {
+                      this._name = newname;  
+                  }
+              }
+
+              // Method to display details
+              display() {
+                  return `Name: ${this._name}, Age: ${this._age}, Grade: ${this._grade}`; 
+              }
+       }
+
+       // Create object
+       let s1 = new Student("John", 20, "A");
+       document.getElementById("output").innerText = s1.display();
+
+       // Update name using setter
+       s1.name = "Alice";
+       document.getElementById("output").innerText += "\n" + s1.display();
+</script>
+
+</body>
+</html>
